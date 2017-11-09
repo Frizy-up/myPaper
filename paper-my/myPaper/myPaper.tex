@@ -160,18 +160,18 @@ The rest of the paper is organized as follows: In Section 2, a two-step Scene-Co
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Methods}
 
-In the monitoring system, the camera images data distribution are highly similarity, so we construct the Scene-Compared Network. First, converting all images to one "big image". Then process the this "big image" with the common DCNN methods. Figure \ref{Scene-ComparedNet} illustrates the architecture of the proposed network. We will demonstrate the advantages of this architecture in the experiment section. 
+In the monitoring system, the camera images data distribution are highly similarity, so we construct the Scene-Compared Network. First, converting all images to one "big image". Then process the this "big image" with the common DCNN methods. Figure \ref{Scene-ComparedNetArchitecture} illustrates the architecture of the proposed network. We will demonstrate the advantages of this architecture in the experiment section. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=15 cm]{3.jpg}
 	\caption{The Scene-Compared Network architecture.}
-	\label{Scene-ComparedNet}
+	\label{Scene-ComparedNetArchitecture}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Converting all images to one}
 
-As Figure \ref{Scene-ComparedNet} illustrated, The network input all of the cameras' images at once, then concatenate these images in their channel dimensionality. Let $M_{ij}^{mn}$ represent the $m$th camera image, $n$th channel, $i$th row, $j$th column pixel, then we denote the "big image" matrix by:
+As Figure \ref{Scene-ComparedNetArchitecture} illustrated, The network input all of the cameras' images at once, then concatenate these images in their channel dimensionality. Let $M_{ij}^{mn}$ represent the $m$th camera image, $n$th channel, $i$th row, $j$th column pixel, then we denote the "big image" matrix by:
 
 \begin{equation}
 \begin{bmatrix}
