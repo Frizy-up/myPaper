@@ -211,12 +211,42 @@ In the training phase, label of the "big image" is decided by all labels of the 
 \end{table}
 
 \begin{equation}
-big\ image\ label = rules\{labe1_1, label_2, ..., label_m\}
+Big\ image\ label = rules\{labe1_1, label_2, ..., label_m\}
 \end{equation}
 
 \subsection{CNN Process}
+ 
+CNN Process include convolutional layer, active layer, pooling layer, and so on. It caculates the classification loss, throught back propagation and gradient descent to adjust the weights of the convolution kernels to make the kernels learn to extraction useful features. In the following part, we will describe these kinds of layers in more detail. 
 
-Characteristics of convolutional, pooling, optimization and so on.  
+Convolutional layer is composed of a number of two-dimensional filters, each of the filters is a feature extractor. Suppose the input of the convolutional layer is $X^{N_{in} \times W_{in} \times H_{in}}$, meaning there are $N_{in}$ channels, each of the channels' width is $W_{in}$, height is $H_{in}$. If the convolutional layer has $n$ filters, the dimensional of thess filters are $w \times h$, then the output of the convolutional layer can be calculated as follows\cite{ConvolutinFormula}:
+
+\begin{equation}
+C_j = \sum_{i=1}^{N_{in}}X_i*W_j + B_j
+\end{equation}
+where $C_j$ is the $j$-th channel of the convolutional layer; $X_i$ represents the input data of the $i$-th channel; $W_j$ is the weight of $j$-th filter; $*$ is an operator of convolution; $B_j$ denotes the bias of the $j$-th channel. The number of the convolutional layer output channels are equal to the number of the filters. Suppose the convolution padding is $p$, striding is $s$, then the dimensional of the output of the convolutional layer ($N_{out} \times W_{out} \times H_{out}$) can be calculated as follows:
+
+\begin{equation}
+N_{out} = n
+\end{equation}
+\begin{equation}
+W_{out} = (W_{in} + 2*p -w) / s + 1
+\end{equation}
+\begin{equation}
+H_{out} = (H_{in} + 2*p -h) / s + 1
+\end{equation}
+
+Activation layer as a nonlinear feature, can make the neural network approximate complex function, solve complex problems. It can be represent by the follows:
+
+\begin{equation}
+A_{out} = f(A_{in})
+\end{equation}
+For example, ReLu function\cite{ReLu}: $A(X) = max(0,X)$ .
+
+Pooling layer is a sub-sampling layer, the purpse of this layer is to improves the robustness of learned features through reducing the dimension of the input data. The common used pooling method is max pooling, it outputs only the maximum of each sub-sampling patch of the input channels to reduce the dimension of feature map. The output can be described as follows\cite{ConvolutinFormula}:
+\begin{equation}
+P_{out} = \max_{Block\in{P_{in}}}\{Block\}
+\end{equation}
+Suppose the $Block$ size is $s \times s$, this function will pick one max value in each distinct $s$ pooling block in the input data so that the output will become $s$ times smaller along both spatial dimensions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiments and Results}
@@ -267,11 +297,14 @@ Li, Shaobo, et al. An Ensemble Deep Convolutional Neural Network Model with Impr
 % Reference 5
 \bibitem[Yu, Haiyang, et al. (2017)]{TrafficPrediction}
 Yu, Haiyang, et al. Spatiotemporal Recurrent Convolutional Networks for Traffic Prediction in Transportation Networks. {\em arXiv preprint} {\bf 2017}, {\em 1705.02699}.
+% Reference 6
 \bibitem[Sa, Inkyu, et al. (2016)]{FruitDetection}
 Sa, Inkyu, et al. Deepfruits: A fruit detection system using deep neural networks. {\em Sensors} {\bf 2016}, {\em 1222}.
-% Reference 
-\bibitem[Author3(year)]{ref-book}
-Author3, L. The title of the cited contribution. In {\em The Book Title}; Editor1, F., Editor2, A., Eds.; Publishing House: City, Country, 2007; pp. 32-58, ISBN.
+% Reference 7
+\bibitem[Nebauer, C. (1998)]{ConvolutinFormula}
+Nebauer, C. Evaluation of convolutional neural networks for visual recognition. {\em IEEE Trans. Neural Netw.} {\bf 1998}, {\em 9}, 685–696.
+\bibitem[*******, C. (2011)]{ReLu}
+*******, C. Deep Sparse Rectifier Neural Networks. {\em *******. Neural Netw.} {\bf 1998}, {\em 9}, 685–696.
 \end{thebibliography}
 
 % The following MDPI journals use author-date citation: Arts, Econometrics, Economies, Genealogy, Humanities, IJFS, JRFM, Laws, Religions, Risks, Social Sciences. For those journals, please follow the formatting guidelines on http://www.mdpi.com/authors/references
