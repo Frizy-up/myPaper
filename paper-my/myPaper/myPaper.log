@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.8.19)  11 NOV 2017 18:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.8.19)  12 NOV 2017 16:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1509,42 +1509,41 @@ Package pdftex.def Info: 3.jpg  used on input line 166. on input line 166.
 Package pdftex.def Info: Requested size: 426.79134pt x 303.12645pt on input lin
 e 166.
  [3 <./3.jpg>] [4]
-<4.jpg, id=117, 697.8572pt x 529.98pt>
+<4.jpg, id=114, 697.8572pt x 529.98pt>
 File: 4.jpg Graphic file (type jpg)
 <use 4.jpg>
-Package pdftex.def Info: 4.jpg  used on input line 256. on input line 256.
+Package pdftex.def Info: 4.jpg  used on input line 265. on input line 265.
 Package pdftex.def Info: Requested size: 341.43306pt x 259.2962pt on input line
- 256.
-<5.jpg, id=118, 551.05875pt x 491.58656pt>
+ 265.
+ [5]
+<5.jpg, id=126, 551.05875pt x 491.58656pt>
 File: 5.jpg Graphic file (type jpg)
 <use 5.jpg>
-Package pdftex.def Info: 5.jpg  used on input line 263. on input line 263.
+Package pdftex.def Info: 5.jpg  used on input line 272. on input line 272.
 Package pdftex.def Info: Requested size: 284.52756pt x 253.82623pt on input lin
-e 263.
- [5 <./4.jpg>]
+e 272.
 <6.jpg, id=127, 723.45282pt x 390.70969pt>
 File: 6.jpg Graphic file (type jpg)
 <use 6.jpg>
-Package pdftex.def Info: 6.jpg  used on input line 270. on input line 270.
+Package pdftex.def Info: 6.jpg  used on input line 279. on input line 279.
 Package pdftex.def Info: Requested size: 341.43306pt x 184.39667pt on input lin
-e 270.
-
-Underfull \hbox (badness 10000) in paragraph at lines 290--292
+e 279.
+ [6 <./4.jpg> <./5.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 299--301
 []\T1/ppl/m/n/9 (+20) A. Berg, J. Deng, and L. Fei-Fei. Large scale vi-sual rec
 og-ni-tion chal-lenge 2010.
  []
 
-[6 <./5.jpg> <./6.jpg>]
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 325.
- 
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 334.
+
 AED: lastpage setting LastPage
-[7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 325.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 325.
+[7 <./6.jpg>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 334.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 334.
  (./myPaper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 325.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 325.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 334.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 334.
 Package rerunfilecheck Info: File `myPaper.out' has not changed.
 (rerunfilecheck)             Checksum: 9BF7A6A93B055EB586E75E292613BA82;761.
 
@@ -1553,11 +1552,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25866 strings out of 492990
- 446196 string characters out of 6128429
+ 25870 strings out of 492990
+ 446235 string characters out of 6128429
  537605 words of memory out of 5000000
  28722 multiletter control sequences out of 15000+600000
- 60678 words of font info for 210 fonts, out of 8000000 for 9000
+ 60837 words of font info for 212 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,13n,60p,2226b,739s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/PaperWriterLatex/TexLive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-supe
@@ -1574,10 +1573,10 @@ st/fonts/type1/public/tex-gyre/qagb.pfb><d:/PaperWriterLatex/TexLive/2017/texmf
 7/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><d:/PaperWriterLatex/TexLive/2
 017/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><d:/PaperWriterLatex/TexLive
 /2017/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on myPaper.pdf (7 pages, 3056214 bytes).
+Output written on myPaper.pdf (7 pages, 3057836 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
- 152 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
+ 192 PDF objects out of 1000 (max. 8388607)
+ 153 compressed objects within 2 object streams
+ 46 named destinations out of 1000 (max. 500000)
  41086 words of extra memory for PDF output out of 42996 (max. 10000000)
 

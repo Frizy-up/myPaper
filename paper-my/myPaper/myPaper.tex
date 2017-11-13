@@ -102,7 +102,7 @@ $^{2}$ \quad Affiliation 2; e-mail@e-mail.com}
 
 Surveillance cameras can be seen in everythere, schools, communities, markets and highway. All of these automated detetion systems, based on multi cameras, constitute an intelligent society. Some of the cameras are damaged will inevitably cause blind spots, as a result some scene information is missing and the function of the monitoring system is affected. Therefore, if the maintenance personnel be informed at the first time when the some of the cameras are damaged, the camera can be repaired at once and the loss will be minimized.
 
-Currently, surveillance cameras can dignose the shelter, which make the image become blur because the lens is covered and is not in focus state (Figure \ref{shelter}). Through filter the image by laplacian operator, and then computer the average variance of the image matrix. If the result value less than a setted threshold meaning the image is blur and camera is convered by something. However, when lens is partially blocked, local damaged or the camera is subject to signal interference, the image shown as in Figure \ref{blindSpotFigure}, will also cause monitoring blind spots, the algorithm needs to be detected this situation in real time. As the local blind spot's shape, color and location in the pictures are random and varied, it is difficult that use the features constructed by human to identify the damaged images. A well solution is that using deep convolution neural networks to classify these images to different category. DCNN trained by supervision method with substantial labeled images, can automaticlly learn to extract image feature \cite{zeiler2014visualizing}. 
+Currently, surveillance cameras can dignose the shelter, which make the image become blur because the lens is covered and is not in focus state (Figure \ref{shelter}). Through filter the image by laplacian operator, and then computer the average variance of the image matrix. If the result value less than a setted threshold meaning the image is blur and camera is convered by something. However, when lens is partially blocked, local damaged or the camera is subject to signal interference, the image shown as in Figure \ref{blindSpotFigure}, will also cause monitoring blind spots, the algorithm needs to be detected this situation in real time. As the local blind spot's shape, color and location in the pictures are random and varied, it is difficult that use the features constructed by human to identify the damaged images. A well solution is that using deep convolution neural networks to classify these images to different category. DCNN trained by supervision method with substantial labeled images, can automaticlly learn to extract image feature \cite{zeiler2014visualizing}. DCNN has the capability to learning hierarchical representations, it can fuse input data and extract basic features in the lower layers, fuse basic features into high level features and decisions in the middle layers, and further fuse these features and decisions in the higher layers to obtain the final diagnosis result.
 
 \begin{figure}[H]
 \centering
@@ -179,7 +179,7 @@ M_{i,j}^{11},M_{i,j}^{12},M_{i,j}^{13},M_{i,j}^{21},...,M_{i,j}^{m1},M_{i,j}^{m2
 \end{bmatrix}
 \end{equation}
 
-In the training phase, label of the "big image" is decided by all labels of the source images. The merge rules are showed in Table \ref{LabelsMergeRules}.
+In the training phase, label of the "big image" is decided by all labels of the source images, which label1 to lable4 respectively represent the camera1 to camera4. The number zero means the camera is operating well and number one means the camera is damaged, the image has some defect areas. The merge rules are showed in Table \ref{LabelsMergeRules}.According to the original images' label which compose the "big image", the label of the "big image" id divided into sixteen categories.
 
 \begin{table}[H]
 \caption{Labels merge rules.}
@@ -216,7 +216,7 @@ Big\ image\ label = rules\{labe1_1, label_2, ..., label_m\}
 
 \subsection{CNN Process}
  
-CNN Process include convolutional layer, active layer, pooling layer, and so on. It caculates the classification loss, throught back propagation and gradient descent to adjust the weights of the convolution kernels to make the kernels learn to extraction useful features. In the following part, we will describe these kinds of layers in more detail. 
+CNN Process include convolutional layer, active layer, pooling layer, and fully connected layer. It caculates the classification loss, throught back propagation and gradient descent to adjust the weights of the convolution kernels to make the kernels learn to extraction useful features. In the following part, we will describe these kinds of layers in more detail. 
 
 Convolutional layer is composed of a number of two-dimensional filters, each of the filters is a feature extractor. Suppose the input of the convolutional layer is $X^{N_{in} \times W_{in} \times H_{in}}$, meaning there are $N_{in}$ channels, each of the channels' width is $W_{in}$, height is $H_{in}$. If the convolutional layer has $n$ filters, the dimensional of thess filters are $w \times h$, then the output of the convolutional layer can be calculated as follows\cite{ConvolutinFormula}:
 
@@ -247,6 +247,15 @@ Pooling layer is a sub-sampling layer, the purpse of this layer is to improves t
 P_{out} = \max_{Block\in{P_{in}}}\{Block\}
 \end{equation}
 Suppose the $Block$ size is $s \times s$, this function will pick one max value in each distinct $s$ pooling block in the input data so that the output will become $s$ times smaller along both spatial dimensions.
+
+Fully connected layer is similar a classifier. If previous layers map original data to feature space, fully connected layer plays the role that maps the feature space to sample labeled space. Typically, using the softmax regression to learn the classifier distribution. Assuming that the task is a $K$-label problem, the output of the softmax
+regression can be calculated as follows:
+
+\begin{equation}
+P_j = \frac{e^{z_j}}{\sum_{i=1}^{K}e^{z_i}}
+\end{equation}
+where $z_j$ denotes the logits of the $j$-th output neuron and $P_j$ denotes the probability of $j$ category.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiments and Results}
